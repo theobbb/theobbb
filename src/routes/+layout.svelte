@@ -14,7 +14,7 @@
 
 <Header />
 <div class="bg-neutral-900">
-	<div class="mx-auto max-w-256 px-8">
+	<div class="mx-auto max-w-244 px-8">
 		{@render children?.()}
 	</div>
 </div>

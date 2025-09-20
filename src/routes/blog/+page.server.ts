@@ -1,7 +1,9 @@
 const MAX_POSTS = 10;
 
-export async function load({ fetch }) {
-	const modules = import.meta.glob('/src/posts/blog/*.md');
+export async function load() {
+	const modules = import.meta.glob('/src/obsidian/blog/*.md');
+
+	const tags = {};
 
 	const promises = Object.entries(modules).map(([path, resolver]) =>
 		resolver().then((post) => {
@@ -10,12 +12,20 @@ export async function load({ fetch }) {
 			return {
 				title,
 				slug,
-				...post.metadata
+				meta: post.metadata
 			};
 		})
 	);
 	const posts = await Promise.all(promises);
 
+	posts.forEach((post) => {
+		if (!post.meta?.tags?.length) return;
+		post.meta.tags.forEach((tag) => {
+			if (!tags[tag]) tags[tag] = 1;
+			else tags[tag]++;
+		});
+	});
+	console.log(tags);
 	return {
 		posts
 	};

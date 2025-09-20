@@ -1,29 +1,26 @@
 import { error } from '@sveltejs/kit';
 
-export const load = async ({ params }) => {
-	const modules = import.meta.glob(`/src/posts/blog/*.md`, { eager: true });
+export async function load({ params }) {
+	const modules = import.meta.glob(`/src/obsidian/blog/*.md`, { eager: true });
 
-	let title: string = '';
-	let slug: strin = '';
-
-	const post = Object.entries(modules).find(([path, post]) => {
+	const entry = Object.entries(modules).find(([path]) => {
 		// Extract the slug from the file path
-		title = path.split('/').pop()?.replace('.md', '');
-		slug = title?.replace(' ', '-').toLowerCase();
+		const title = path.split('/').pop()?.replace('.md', '');
+		const slug = title?.replace(' ', '-').toLowerCase();
 
 		return slug === params.slug;
 	});
 
-	if (!post) {
-		throw error(404); // Couldn't resolve the post
+	if (!entry) {
+		throw error(404, 'Post not found'); // Couldn't resolve the post
 	}
 
-	const [path, post_module] = post;
+	const [path, post_module] = entry;
 
 	return {
 		component: post_module.default,
 		meta: post_module.metadata,
-		title,
-		slug
+		title: path.split('/').pop()?.replace('.md', ''),
+		slug: params.slug
 	};
-};
+}

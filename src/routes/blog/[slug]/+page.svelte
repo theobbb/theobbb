@@ -7,8 +7,8 @@
 </script>
 
 <h1>{data.title}</h1>
-<p>
+<!-- <p>
 	Published on: {data.meta.date}
-</p>
+</p> -->
 
 <div class="md"><Component /></div>

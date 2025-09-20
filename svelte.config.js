@@ -1,11 +1,27 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
+import { visit } from 'unist-util-visit';
+
+function preprocessor() {
+	return (tree) => {
+		visit(tree, 'image', (node) => {
+			// Check if the image source starts with 'assets/'
+			if (node.url.startsWith('assets/')) {
+				// Prepend a slash to the URL
+				node.url = '/' + node.url;
+			}
+		});
+	};
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'],
-	preprocess: [(vitePreprocess(), mdsvex({ extensions: ['.svelte.md', '.md', '.svx'] }))],
+	extensions: ['.svelte', '.md', '.svx'],
+	preprocess: [
+		vitePreprocess(),
+		mdsvex({ extensions: ['.md', '.svx'], remarkPlugins: [preprocessor] })
+	],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.

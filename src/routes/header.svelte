@@ -9,6 +9,14 @@
 			href: '/blog'
 		},
 		{
+			name: 'jeux * games',
+			href: '/games'
+		},
+		{
+			name: 'idées * ideas',
+			href: '/games'
+		},
+		{
 			name: 'contact',
 			href: '/contact'
 		}

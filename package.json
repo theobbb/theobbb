@@ -36,6 +36,7 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
-		"mdsvex": "^0.12.6"
+		"mdsvex": "^0.12.6",
+		"unist-util-visit": "^5.0.0"
 	}
 }

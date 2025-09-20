@@ -2,6 +2,7 @@
 date: 2025-09-16
 tags:
   - Deneigement
+  - Test2
 ---
 
 Code de tilemap procedural commence à ressembler à qqchose. Test in-game avec objects.

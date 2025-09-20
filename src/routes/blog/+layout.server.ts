@@ -32,7 +32,7 @@ export async function load() {
 		.map((post) => post.category)
 		.filter((category, index, arr) => arr.findIndex((c) => c.name === category.name) === index);
 
-	const ordered_posts = posts.sort((a, b) => b.meta.date - a.meta.date);
+	const ordered_posts = posts.sort((a, b) => b.meta?.date - a.meta?.date);
 
 	return {
 		posts: ordered_posts,

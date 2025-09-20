@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/autres/Post 2.md",
+                "file": "blog/design/Test.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Post 2"
+              "title": "Test"
             }
           }
         ]
@@ -169,16 +169,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "dba3ac7e70681921",
+  "active": "f48f88c88bd2d1d7",
   "lastOpenFiles": [
     "blog/autres/Internet.md",
-    "blog/autres",
-    "blog/jeu deneigement/Roger Pelletier-Lapèle.md",
     "blog/autres/Post 2.md",
+    "assets/Screenshot 2025-08-09 121714.png",
+    "blog/jeu deneigement/Roger Pelletier-Lapèle.md",
+    "blog/design/Test.md",
+    "assets/A4 - 1.pdf",
+    "blog/design",
+    "blog/autres",
     "blog/jeu deneigement",
     "Untitled 1",
     "Untitled",
-    "assets/Screenshot 2025-08-09 121714.png",
     "assets/AssuranceMaladie.jpg",
     "blog/autres/Post 3.md",
     "assets/visa-bresil - Copy 5.jpeg",

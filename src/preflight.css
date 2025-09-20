@@ -123,6 +123,11 @@ textarea {
   Correct the inability to style the border radius in iOS Safari.
 */
 
+button {
+	font-family: inherit;
+	color: inherit;
+}
+
 button,
 input:where([type='button'], [type='reset'], [type='submit']),
 ::file-selector-button {

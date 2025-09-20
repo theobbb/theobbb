@@ -1,4 +1,6 @@
 <script>
+	import Apocalypse from './apocalypse/apocalypse.svelte';
+
 	const links = [
 		{
 			name: 'accueil',
@@ -21,6 +23,7 @@
 			href: '/contact'
 		}
 	];
+	let apocalypse_mode = $state(false);
 </script>
 
 <header class="sticky top-0 border-b border-white/20 bg-black px-4 py-3">
@@ -37,7 +40,5 @@
 		</ul>
 	</nav>
 </header>
-<!-- 
-<div class="">
-	<img style="width: 64px; height: 64px;" src="/images/sprites/button2.png" />
-</div> -->
+
+<Apocalypse />

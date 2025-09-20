@@ -1,7 +1,7 @@
 <script>
 	const links = [
 		{
-			name: 'accueil * home',
+			name: 'accueil',
 			href: '/'
 		},
 		{
@@ -9,12 +9,12 @@
 			href: '/blog'
 		},
 		{
-			name: 'jeux * games',
-			href: '/games'
+			name: 'jeux',
+			href: '/jeux'
 		},
 		{
-			name: 'idées * ideas',
-			href: '/games'
+			name: 'idées',
+			href: '/idees'
 		},
 		{
 			name: 'contact',

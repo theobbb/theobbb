@@ -1,11 +1,13 @@
 <script>
 	const { index = 0, ...props } = $props();
+
+	const frame_count = 8;
 </script>
 
 <button {...props} class="cursor-pointer bg-transparent">
 	<div
 		class="control"
-		style="background-size: {6 * 66}px 66px; background-position: {index * -66}px 0;"
+		style="background-size: {frame_count * 66}px 66px; background-position: {index * -66}px 0;"
 	></div>
 </button>
 

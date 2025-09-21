@@ -1,5 +1,5 @@
 <script>
-	import Apocalypse from './apocalypse/apocalypse.svelte';
+	import Dashboard from './dashboard/dashboard.svelte';
 
 	const links = [
 		{
@@ -23,10 +23,10 @@
 			href: '/contact'
 		}
 	];
-	let apocalypse_mode = $state(false);
 </script>
 
 <header class="sticky top-0 border-b border-white/20 bg-black px-4 py-3">
+	<Dashboard />
 	<nav class="">
 		<ul class="flex gap-4 text-lg uppercase">
 			{#each links as { name, href }}
@@ -40,5 +40,3 @@
 		</ul>
 	</nav>
 </header>
-
-<Apocalypse />

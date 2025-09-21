@@ -1,17 +1,10 @@
+@import './fonts.css';
+
 @layer theme, base, utilities;
 
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);
 @import './preflight.css' layer(base);
-
-@font-face {
-	font-family: 'iosevka-ext-subset';
-	src: url('/fonts/iosevka-ext-subset.woff2') format('woff2');
-}
-@font-face {
-	font-family: 'IBM_VGA_8x14';
-	src: url('/fonts/IBM_VGA_8x14.woff2') format('woff2');
-}
 
 html {
 	background-color: black;
@@ -22,6 +15,11 @@ html {
 /* a:visited {
 	color: green;
 } */
+
+.sprite {
+	image-rendering: pixelated; /* optional, good for retro art */
+	background-repeat: no-repeat;
+}
 
 h1 {
 	font-size: 4rem;
